@@ -5,6 +5,10 @@ import { ReactComponent as FFLogo } from "../../assets/FF_logo.svg";
 
 const Header = () => {
 
+    const logout = event => {
+        event.preventDefault();
+        Auth.logout();
+    };
 
     return (
         <header>
@@ -28,3 +32,5 @@ const Header = () => {
         </header>
     );
 };
+
+export default Header;
