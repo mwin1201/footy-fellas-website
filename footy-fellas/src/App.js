@@ -6,7 +6,7 @@ import {
   createHttpLink
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // pages
 import Homepage from "./pages/Homepage";
@@ -42,9 +42,9 @@ function App() {
       <Router>
         <Header />
         <div>
-          <Routes>
+          <Switch>
             <Route exact path="/" component={Homepage} />
-          </Routes>
+          </Switch>
         </div>
         <Footer />
       </Router>

@@ -1,9 +1,9 @@
 /* Website Colors */
 :root {
-  --ff-green: #8BB174;
-  --orange: #FF931F;
-  --blue: #3F88C5;
-  --black: #262626;
+  --darkest-green: #2A4D14;
+  --dark-green: #317B22;
+  --maroon: #8C271E;
+  --orange: #E98A15;
 }
 
 /* General Styling */
@@ -22,13 +22,37 @@ body {
 }
 
 /* Homepage */
+main {
+  background-color: var(--dark-green);
+}
 
+main section:first-of-type {
+  height: 800px;
+  background-image: url("./assets/soccer_stadium.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.title {
+  font-family: PT Serif, serif;
+  font-size: 72px;
+  color: var(--dark-green);
+  text-align: center;
+}
 
 /* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+  background-color: var(--dark-green);
+}
 
 /* Footer */
 footer {
-  background-color: var(--black);
+  background-color: var(--darkest-green);
 }
 
 footer p {
