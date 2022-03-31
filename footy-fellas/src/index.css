@@ -34,20 +34,76 @@ main section:first-of-type {
   background-size: cover;
 }
 
-.title {
-  font-family: PT Serif, serif;
-  font-size: 72px;
-  color: var(--dark-green);
-  text-align: center;
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0px 30px;
 }
 
+.card {
+  border-style: solid;
+  border-width: 5px;
+  width: 30%;
+  height: 500px;
+}
+
+.epl {
+  background-image: url("./assets/epl_klopp.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mls {
+  background-image: url("./assets/mls_image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.f1 {
+  background-image: url("./assets/f1_car.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
 /* Header */
+
+#logo {
+  height: 50%;
+  width: 50%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 40px;
   background-color: var(--dark-green);
+}
+
+.title {
+  font-family: PT Serif, serif;
+  font-size: 72px;
+  color: white;
+  text-align: center;
+}
+
+.ff-title p{
+  color: var(--maroon);
+}
+
+.card-btn {
+  background-color: var(--maroon);
+  font-size: 30px;
+  color: var(--dark-green);
+}
+
+.card-btn:hover {
+  background-color: var(--dark-green);
+  color: var(--maroon);
 }
 
 /* Footer */
