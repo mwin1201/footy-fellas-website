@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // pages
 import Homepage from "./pages/Homepage";
+import EPL from "./pages/EPL";
 
 //components
 import Header from "./components/Header";
@@ -44,6 +45,7 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/" component={Homepage} />
+            <Route exact path="/epl" component={EPL} />
           </Switch>
         </div>
         <Footer />
