@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
-import { ReactComponent as FFLogo } from "../../assets/FF_logo.svg";
+import { ReactComponent as FFLogo } from "../../assets/FF_logo.svg"
 
 const Header = () => {
 
@@ -13,12 +13,11 @@ const Header = () => {
     return (
         <header>
             <Link to="/" id="logo">
-                <FFLogo />
+                <FFLogo preserveAspectRatio="xMidYMid slice"/>
             </Link>
 
             <div className="ff-title">
                 <h1 className="title">We are Footy Fellas</h1>
-                <p>We got a little something for you</p>
             </div>
 
             <nav>
