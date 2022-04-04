@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // pages
 import Homepage from "./pages/Homepage";
-import EPL from "./pages/EPL";
+import PremierLeague from "./pages/PremierLeague";
 
 //components
 import Header from "./components/Header";
@@ -45,7 +45,9 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route exact path="/epl" component={EPL} />
+            <Route exact path="/epl" component={PremierLeague} />
+
+            //add a NoMatch component when users search for a non-existant page
           </Switch>
         </div>
         <Footer />
