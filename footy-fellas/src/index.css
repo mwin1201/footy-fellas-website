@@ -128,3 +128,45 @@ footer p {
   color: var(--orange);
   font-size: 20px;
 }
+
+/* Standing List */
+.premContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.clubContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.clubCard {
+  border: 5px solid black;
+  border-radius: 12px;
+}
+
+.clubTitle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.clubTitle h3 {
+  font-size: 36px;
+  color: var(--dark-green)
+}
+
+.clubTitle p {
+  font-size: 30px;
+  color: var(--maroon)
+}
+
+.clubBreakdown p{
+  font-size: 28px;
+  text-align: center;
+}
+
+.clubLogo {
+  text-align: center;
+}

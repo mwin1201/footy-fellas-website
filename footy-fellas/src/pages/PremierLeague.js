@@ -17,7 +17,7 @@ const PremierLeague = () => {
         .then((response) => {
             response.json()
                 .then((data) => {
-                    setData(data.response[0].league.standings);
+                    setData(data.response[0].league.standings[0]);
                 });
         })
         .catch(err => {
@@ -33,16 +33,13 @@ const PremierLeague = () => {
     }, [data]);
 
     return (
-        <section>
+        <section className="premContainer">
             {isLoading ? (
                 <h1>Loading...</h1>
             ) : (
-                data.map((club) => (
-                    <h2 key={club.team.id}>
-                        {club.team.points}
-                    </h2>
-                ))
-            )}
+                <StandingList apiData={data} />
+            )
+            }
         </section>
     );
 };
