@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import StandingList from "../components/EPLStandings";
 
-const PremierLeague = () => {
+const MajorLeagueSoccer = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([]);
 
     useEffect(() => {
         const apiCall = async () => {
-            const apiURL = "https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=39";
+            const apiURL = "https://api-football-v1.p.rapidapi.com/v3/standings?season=2022&league=253";
             await fetch(apiURL, {
                 method: "GET",
                 headers: {
@@ -17,9 +17,9 @@ const PremierLeague = () => {
             })
             .then((response) => {
                 response.json()
-                    .then((data) => {
-                        setData(data.response[0].league.standings);
-                    });
+                .then((data) => {
+                    setData(data.response[0].league.standings);
+                });
             })
             .catch(err => {
                 console.log(err);
@@ -32,21 +32,18 @@ const PremierLeague = () => {
         if (data.length !== 0) {
             setIsLoading(false);
         }
-    }, [data]);
+    }, [data])
 
     return (
-        <section className="standingContainer">
+        <section>
             {isLoading ? (
                 <h1>Loading...</h1>
             ) : (
-                <>
-                    <h1>Current Standings</h1>
-                    <StandingList apiData={data} />
-                </>
-            )
-            }
+                <StandingList apiData={data} />
+            )}
         </section>
-    );
+    )
 };
 
-export default PremierLeague;
+
+export default MajorLeagueSoccer;
