@@ -21,9 +21,9 @@ const StandingList = ({ apiData }) => {
                 </div>
             </div>
             ))}
-            {apiData.length === 2 &&
-            apiData.map((conference) => (
-                conference.map((club) => (
+            
+            {apiData.length > 1 &&
+            apiData.map((club) => (
                 <div className="clubCard" key={club.team.id}>
                     <div className="clubTitle">
                         <h3>{club.team.name}</h3>
@@ -36,8 +36,8 @@ const StandingList = ({ apiData }) => {
                         <img src={club.team.logo} alt="team crest" />
                     </div>
                 </div>
-                ))
-            ))}
+                )
+            )}
         </section>
     );
 };
