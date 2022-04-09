@@ -199,3 +199,54 @@ footer p {
   height: 150px;
   width: 150px;
 }
+
+/* F1 Standings */
+.teamContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.teamCard {
+  border: 5px solid var(--maroon);
+  border-radius: 12px;
+}
+
+.teamName {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.teamLogo {
+  align-items: center;
+}
+
+.teamLogo img {
+  height: 150px;
+  width: 150px;
+}
+
+.driverContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.driverCard {
+  border: 5px solid var(--orange);
+  border-radius: 12px;
+}
+
+.driverName {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.driverLogo {
+  align-items: center;
+}
+
+.driverLogo img {
+  height: 150px;
+  width: 150px;
+}

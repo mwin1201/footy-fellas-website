@@ -3,7 +3,8 @@ import StandingList from "../components/EPLStandings";
 
 const MajorLeagueSoccer = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [data, setData] = useState([]);
+    const [eastData, setEastData] = useState([]);
+    const [westData, setWestData] = useState([]);
 
     useEffect(() => {
         const apiCall = async () => {
@@ -18,7 +19,8 @@ const MajorLeagueSoccer = () => {
             .then((response) => {
                 response.json()
                 .then((data) => {
-                    setData(data.response[0].league.standings);
+                    setEastData(data.response[0].league.standings[0]);
+                    setWestData(data.response[0].league.standings[1])
                 });
             })
             .catch(err => {
@@ -29,18 +31,29 @@ const MajorLeagueSoccer = () => {
     }, []);
 
     useEffect(() => {
-        if (data.length !== 0) {
+        if (eastData.length !== 0 || westData.length !== 0) {
             setIsLoading(false);
         }
-    }, [data])
+    }, [eastData])
 
     return (
         <section>
             {isLoading ? (
                 <h1>Loading...</h1>
             ) : (
-                <StandingList apiData={data} />
-            )}
+                <>
+                    <div>
+                        <h1>Eastern Conference</h1>
+                        <StandingList apiData={eastData} />
+                    </div>
+                    <div>
+                        <h1>Western Conference</h1>
+                        <StandingList apiData={westData} />
+                    </div>
+                </>
+            )
+            }
+
         </section>
     )
 };
