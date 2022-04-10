@@ -60,7 +60,7 @@ const Formula1 = () => {
                     <F1Standings apiData={teamData} />
                 </div>
                 <div className="driverData">
-                    <h1>Driver Standings:</h1>
+                    <h1>Driver Standings</h1>
                     <F1Standings apiData={driverData} />
                 </div>
 

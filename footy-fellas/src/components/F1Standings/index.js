@@ -30,7 +30,7 @@ const F1Standings = ({ apiData }) => {
                 <div className="driverCard col-2" key={club.driver.id}>
                     <div className="driverName">
                         <h3>{club.driver.name}</h3>
-                        <p>{club.points}pts</p>
+                        <p>{club.points ? club.points : 0}pts</p>
                     </div>
                     <div className="driverLogo">
                         <img src={club.driver.image} alt="driver logo" />

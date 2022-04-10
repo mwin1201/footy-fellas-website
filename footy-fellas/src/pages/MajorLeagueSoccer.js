@@ -42,11 +42,11 @@ const MajorLeagueSoccer = () => {
                 <h1>Loading...</h1>
             ) : (
                 <>
-                    <div>
+                    <div className="conference">
                         <h1>Eastern Conference</h1>
                         <StandingList apiData={eastData} />
                     </div>
-                    <div>
+                    <div className="conference">
                         <h1>Western Conference</h1>
                         <StandingList apiData={westData} />
                     </div>

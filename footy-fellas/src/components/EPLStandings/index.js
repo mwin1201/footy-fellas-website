@@ -1,4 +1,5 @@
 import React from "react";
+import nameCheck from "../../utils/helpers";
 
 
 const StandingList = ({ apiData }) => {
@@ -10,7 +11,7 @@ const StandingList = ({ apiData }) => {
             apiData[0].map((club) => (
             <div className="clubCard" key={club.team.id}>
                 <div className="clubTitle">
-                    <h3>{club.team.name}</h3>
+                    <h3>{nameCheck(club.team.name)}</h3>
                     <p>{club.points}pts</p>
                 </div>
                 <div className="clubBreakdown">
