@@ -213,11 +213,21 @@ footer p {
 .teamCard {
   border: 5px solid var(--maroon);
   border-radius: 12px;
+  margin: 10px;
 }
 
 .teamName {
-  display: flex;
-  justify-content: space-evenly;
+  text-align: center;
+}
+
+.teamName h3 {
+  font-size: 36px;
+  color: var(--dark-green)
+}
+
+.teamName p {
+  font-size: 30px;
+  color: var(--maroon);
 }
 
 .teamLogo {
@@ -238,15 +248,25 @@ footer p {
 .driverCard {
   border: 5px solid var(--orange);
   border-radius: 12px;
+  margin: 10px;
 }
 
 .driverName {
-  display: flex;
-  justify-content: space-evenly;
+  text-align: center;
+}
+
+.driverName h3 {
+  font-size: 30px;
+  color: var(--dark-green)
+}
+
+.driverName p {
+  font-size: 30px;
+  color: var(--maroon);
 }
 
 .driverLogo {
-  align-items: center;
+  text-align: center;
 }
 
 .driverLogo img {
