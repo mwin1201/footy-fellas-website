@@ -5,6 +5,39 @@ const Formula1 = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [teamData, setTeamData] = useState([]);
     const [driverData, setDriverData] = useState([]);
+    //const [filterYear, setFilterYear] = useState(2022);
+
+    const filterYears = [
+        2022,
+        2021,
+        2020,
+        2019,
+        2018,
+        2017,
+        2016,
+        2015
+    ];
+
+    const getTeamRankings = async (year) => {
+        const apiURL = "https://api-formula-1.p.rapidapi.com/rankings/teams?season=" + year;
+            await fetch(apiURL, {
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Host": "api-formula-1.p.rapidapi.com",
+                    "X-RapidAPI-Key": "b0d923a5d2msh8e2d936f100abe3p1bbdaejsn960a7d4a1c91"
+                }
+            })
+            .then((response) => {
+                response.json()
+                .then((data) => {
+                    setTeamData(data.response);
+                    getDriverRankings(year);
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
 
     useEffect(() => {
         const apiCall = async () => {
@@ -28,6 +61,26 @@ const Formula1 = () => {
         };
         apiCall();
     }, []);
+
+    const getDriverRankings = async (year) => {
+        const apiURL = "https://api-formula-1.p.rapidapi.com/rankings/drivers?season=" + year;
+        await fetch(apiURL, {
+            method: "GET",
+            headers: {
+                "X-RapidAPI-Host": "api-formula-1.p.rapidapi.com",
+                "X-RapidAPI-Key": "b0d923a5d2msh8e2d936f100abe3p1bbdaejsn960a7d4a1c91"
+            }
+        })
+        .then((response) => {
+            response.json()
+            .then((data) => {
+                setDriverData(data.response);
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    };
 
     useEffect(() => {
         const apiCall = async () => {
@@ -55,14 +108,22 @@ const Formula1 = () => {
 
     return (
         <section>
-                <div className="teamData">
-                    <h1>Constructors' Cup Standings</h1>
-                    <F1Standings apiData={teamData} />
+            <div className="filter">
+                <div className="buttons">
+                    <h1>Filters:</h1>
+                    {filterYears.map((year) => (
+                        <button key={year} onClick={() => getTeamRankings(year)}>{year}</button>
+                    ))}
                 </div>
-                <div className="driverData">
-                    <h1>Driver Standings</h1>
-                    <F1Standings apiData={driverData} />
-                </div>
+            </div>
+            <div className="teamData">
+                <h1>Constructors' Cup Standings</h1>
+                <F1Standings apiData={teamData} />
+            </div>
+            <div className="driverData">
+                <h1>Driver Standings</h1>
+                <F1Standings apiData={driverData} />
+            </div>
 
         </section>
     );
