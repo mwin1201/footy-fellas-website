@@ -10,8 +10,7 @@ const Formula1 = () => {
     const filterYears = [
         2021,
         2019,
-        2018,
-        2017
+        2018
     ];
 
     const getTeamRankings = async (year) => {
