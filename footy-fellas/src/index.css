@@ -199,8 +199,37 @@ footer p {
 }
 
 /* MLS page */
-.conference {
+.conference, .curYear {
   text-align: center;
+}
+
+/* F1 Page */
+.f1DataContainer {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.buttons button {
+  font-size: 25px;
+  background-color: var(--orange);
+  color: var(--darkest-green);
+  margin: 5px;
+  border-radius: 12px;
+}
+
+.buttons button:hover {
+  background-color: var(--darkest-green);
+  color: var(--orange);
+}
+
+.buttons button:active {
+  background-color: var(--darkest-green);
+  color: var(--orange);
 }
 
 /* F1 Standings */
