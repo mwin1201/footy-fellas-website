@@ -5,17 +5,13 @@ const Formula1 = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [teamData, setTeamData] = useState([]);
     const [driverData, setDriverData] = useState([]);
-    //const [filterYear, setFilterYear] = useState(2022);
+    const [curFilter, setCurFilter] = useState(2022);
 
     const filterYears = [
-        2022,
         2021,
-        2020,
         2019,
         2018,
-        2017,
-        2016,
-        2015
+        2017
     ];
 
     const getTeamRankings = async (year) => {
@@ -75,6 +71,7 @@ const Formula1 = () => {
             response.json()
             .then((data) => {
                 setDriverData(data.response);
+                setCurFilter(year);
             });
         })
         .catch(err => {
@@ -115,6 +112,9 @@ const Formula1 = () => {
                         <button key={year} onClick={() => getTeamRankings(year)}>{year}</button>
                     ))}
                 </div>
+            </div>
+            <div className="curYear">
+                <h1>{curFilter}</h1>
             </div>
             <div className="teamData">
                 <h1>Constructors' Cup Standings</h1>

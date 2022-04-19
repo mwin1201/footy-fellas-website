@@ -4,7 +4,6 @@ import nameCheck from "../../utils/helpers";
 
 const StandingList = ({ apiData }) => {
 
-    console.log(apiData);
     return (
         <section className="clubContainer">
             {apiData.length === 1 &&
