@@ -24,7 +24,7 @@ const F1Standings = ({ apiData }) => {
         </div>
         }
 
-        {apiData.length === 20 &&
+        {apiData.length > 10 &&
         <div className="driverContainer">
             {apiData.map((club) => (
                 <div className="driverCard col-2" key={club.driver.id}>
