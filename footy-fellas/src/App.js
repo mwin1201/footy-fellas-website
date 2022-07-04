@@ -13,6 +13,7 @@ import Homepage from "./pages/Homepage";
 import PremierLeague from "./pages/PremierLeague";
 import MajorLeagueSoccer from "./pages/MajorLeagueSoccer";
 import Formula1 from "./pages/Formula1";
+import Signup from "./pages/Signup";
 
 //components
 import Header from "./components/Header";
@@ -50,6 +51,7 @@ function App() {
             <Route exact path="/epl" component={PremierLeague} />
             <Route exact path="/mls" component={MajorLeagueSoccer} />
             <Route exact path="/f1" component={Formula1} />
+            <Route exact path="/signup" component={Signup} />
 
             //add a NoMatch component when users search for a non-existant page
           </Switch>

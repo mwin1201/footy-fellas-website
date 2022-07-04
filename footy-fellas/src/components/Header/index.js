@@ -28,8 +28,8 @@ const Header = () => {
                     </>
                 ) : (
                     <>
-                        {/* <Link to="/signup">Sign-Up</Link>
-                        <Link to="/login">Login</Link> */}
+                        <Link to="/signup">Sign-Up</Link>
+                        {/*<Link to="/login">Login</Link> */}
                         <Link to="/epl">EPL</Link>
                         <Link to="/mls">MLS</Link>
                         <Link to="/f1">F1</Link>

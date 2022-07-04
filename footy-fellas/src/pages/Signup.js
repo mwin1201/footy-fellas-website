@@ -4,6 +4,7 @@ import { validateEmail } from "../utils/helpers";
 
 
 const Signup = () => {
+    const [errorMessage, setErrorMessage] = useState("");
 
     const [formState, setFormState] = useState(
         {
@@ -26,6 +27,12 @@ const Signup = () => {
         
         const email = document.getElementById("email").value;
         const isValid = validateEmail(email);
+        if (!isValid) {
+            setErrorMessage("Please enter a valid email");
+        }
+        else {
+            setErrorMessage("")
+        }
         
     };
 
