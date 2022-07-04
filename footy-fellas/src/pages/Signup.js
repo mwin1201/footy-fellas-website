@@ -1,10 +1,13 @@
-import React, { useState } from react;
+import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { validateEmail } from "../utils/helpers";
+import { ADD_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 
 const Signup = () => {
     const [errorMessage, setErrorMessage] = useState("");
+    const [addUser, { error }] = useMutation(ADD_USER);
 
     const [formState, setFormState] = useState(
         {
@@ -30,8 +33,19 @@ const Signup = () => {
         if (!isValid) {
             setErrorMessage("Please enter a valid email");
         }
+        else if (!email) {
+            setErrorMessage("Please enter a password");
+        }
         else {
-            setErrorMessage("")
+            setErrorMessage("");
+            try {
+                const { data } = await addUser({
+                    variables: {...formState}
+                });
+                Auth.login(data.addUser.token);
+            } catch(e) {
+                console.error(e);
+            }
         }
         
     };
